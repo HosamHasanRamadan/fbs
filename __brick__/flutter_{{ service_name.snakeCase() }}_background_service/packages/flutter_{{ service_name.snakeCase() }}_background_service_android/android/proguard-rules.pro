@@ -1,0 +1,2 @@
+-keep class id.flutter.flutter_{{ service_name.snakeCase() }}_background_service.** { *; }
+-keepclassmembers class id.flutter.flutter_{{ service_name.snakeCase() }}_background_service.** {*;}
