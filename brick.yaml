@@ -1,5 +1,5 @@
-name: fgs
-description: A new brick created with the Mason CLI.
+name: fbs
+description: Generate new background service based on flutter_background_service package
 
 # The following defines the brick repository url.
 # Uncomment and update the following line before publishing the brick.
@@ -26,8 +26,8 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  name:
+  service_name:
     type: string
     description: Your name
-    default: Dash
-    prompt: What is your name?
+    default: New
+    prompt: Service name in camel case?

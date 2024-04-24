@@ -1,0 +1,8 @@
+
+name: Hooks
+environment:
+  sdk: '>3.3.0'
+
+dependencies:
+  mason: any
+  recase: any
