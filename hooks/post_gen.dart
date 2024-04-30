@@ -17,18 +17,20 @@ void run(HookContext context) async {
 
   final packagesDir = Directory.fromUri(Uri.parse(packagesUrl));
 
-  const folders = [
+  final folders = [
     '.git',
     '.idea',
     '.vscode',
+    '.github',
     '.dart_tool',
-  ];
+  ];  
 
-  folders.forEach((element) async {
+  await Future.forEach(folders, (element) async {
+     
     context.logger.info('removing $element');
     await Process.run(
       'rm',
-      ['-r', '.$element'],
+      ['-r', '$element'],
       workingDirectory: dir,
     );
   });
@@ -55,14 +57,4 @@ void run(HookContext context) async {
     );
     print(result.stdout);
   });
-
-  // this command doesn't work
-  /*
-  context.logger.info('Melos getting all packages');
-  await Process.run(
-    'melos',
-    ['exec', '"flutter pub get"'],
-    workingDirectory: dir,
-  );
-  */
 }
